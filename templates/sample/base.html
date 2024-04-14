@@ -1,0 +1,81 @@
+{% extends "base_sub.html" %}
+
+{% block body_html %}
+<div id="hd">
+
+    <h1 id="hd_h1"></h1>
+    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+    {% include "/bbs/newwin.inc.html" %}
+
+    <div id="hd_wrapper">
+        <a href="/" id="logo">Haeju's Portfolio</a>
+    </div>
+
+
+</div>
+
+{% if errors %}
+<ul>
+    {% for error in errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<hr>
+
+<div id="wrapper">
+    <div id="container">
+        <!-- <h2 id="container_title"><span>{% block subtitle %}{% endblock subtitle %}</span></h2> -->
+        {% block content %}
+        {% endblock content %}
+    </div>
+</div>
+
+<hr>
+
+<div id="ft">
+
+    <div id="ft_wr">
+        <div id="ft_link" class="ft_cnt">
+            <a href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
+            <a href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
+            <a href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+            {% if not request.state.is_responsive %}
+                {% if request.state.is_mobile %}
+                    <a href="{{ url_for('device_change', device='pc') }}">PC버전</a>
+                {% else %}
+                    <a href="{{ url_for('device_change', device='mobile') }}">모바일버전</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="ft_copy">Copyright &copy; <b>{{ request.url.hostname }}.</b> All rights reserved.</div>
+
+    <button type="button" id="top_btn">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i><span class="blind">상단으로</span>
+    </button>
+    <button type="button" id="darkmode-toggle-switch">
+      <i class="fa-solid fa-moon visible bright"></i>
+      <i class="fa-solid fa-sun visible dark"></i>
+    </button>
+
+</div>
+
+{% if request.state.config.cf_analytics %}
+    {{ request.state.config.cf_analytics|safe }}
+{% endif %}
+
+<script>
+
+    $(function() {
+        $("#top_btn").on("click", function() {
+            $("html, body").animate({scrollTop:0}, '500');
+            return false;
+        });
+    });
+
+</script>
+{% endblock body_html %}

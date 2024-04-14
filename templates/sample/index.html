@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ request.state.title }}{% endblock title %}
+
+{% block content %}
+<div id="project_wrap">
+    
+    <div class="project_thumb">
+        dsd
+    </div>
+    <div class="project_aside">
+        {{ render_latest_posts(request, 'main_project', 'free', 4, 23)|safe }}
+    </div>
+</div>
+{% endblock content %}

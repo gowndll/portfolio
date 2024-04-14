@@ -1,0 +1,16 @@
+{% if board.bo_use_sideview %}
+    {% import "/sideview/macros.html" as sideview %}
+{% endif %}
+
+{% set thumb_width, thumb_height = 210, 150 %}
+<ul>
+    {% for write in writes -%}
+    <li class="sd">
+        dfsdfsdf
+        <div class="wrap_using"></div>
+        <h3>{{ write.subject }}</h3>
+    </li>
+    {% else -%}
+        <li class="empty_li">게시물이 없습니다.</li>
+    {%- endfor %}
+</ul>
