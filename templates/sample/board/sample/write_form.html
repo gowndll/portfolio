@@ -165,17 +165,16 @@
 
 
         <div class="write_link">
-            <label for="wr_1" class="blind">사용 스킬</label>
+            <label for="wr_1">{{ board.bo_1_subj}}</label>
             <!-- <input type="text" name="wr_1" value="{{ write.wr_1 }}" id="wr_1" class="frm_input full_input" size="50"> -->
             <input type="text" name="wr_1" id="wr_1" hidden>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="html">html</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="css">css</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="js">js</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="jquery">jquery</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="react">react</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="vue">vue</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="cafe24">cafe24</label>
-            <label for=""><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="gs5">GS5</label>
+            {% if board.bo_1 %}
+                {% set boList = board.bo_1.split(',') %}
+                {% set wrList = write.wr_1.split(',') %}
+                {% for item in boList %}
+                    <label><input type="checkbox" name="wr_1_chk" id="wr_1_chk" value="{{ item }}" {{ "checked" if item in wrList else "" }} >{{ item }}</label>
+                {% endfor %}
+            {% endif %}
             <button type="button" onclick="saveSkills()">저장</button>
         </div>
 
