@@ -8,12 +8,20 @@
     {{ request.state.config.cf_add_meta|safe -}}
 {% endif -%}
 <title>{% block title %}{{ request.state.title }}{% endblock title %}</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
 <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="{{ theme_asset(request, 'css/font.css?ver=1.1.1') }}">
 <link rel="stylesheet" href="{{ theme_asset(request, 'css/common.css?ver=1.1.1') }}">
 <link rel="stylesheet" href="{{ theme_asset(request, 'js/slick/slick.css?ver=1.8.1') }}">
 <link rel="stylesheet" href="/static/js/font-awesome/css/all.min.css?ver=6.5.1">
 <link rel="stylesheet" href="{{ theme_asset(request, 'css/default.css?ver=1.1.1') }}">
 <link rel="stylesheet" href="{{ theme_asset(request, 'css/layout.css?ver=1.1.1') }}">
+<link rel="stylesheet" href="{{ theme_asset(request, 'css/main.css?ver=1.1.1') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/static/js/jquery.min.js?ver=3.7.1"></script>
 <script src="/static/js/jquery-migrate.min.js?ver=3.4.0"></script>
 <script src="/static/js/common.js?ver=1.0.0"></script>

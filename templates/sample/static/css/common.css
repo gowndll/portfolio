@@ -2,17 +2,17 @@
 
 /* 초기화 */
 html { overflow-y:scroll; font-size:10px; }
-body { margin:0; padding:0; font-size:1.2rem; font-family:'Malgun Gothic', dotum, sans-serif;  }
+body { margin:0; padding:0; font-size:1.2rem; font-family:"Pretendard", dotum, sans-serif;  }
 html, form, fieldset, img { margin:0; padding:0; border:0 }
-h1, h2, h3, h4, h5, h6 { font-family:'Malgun Gothic', dotum, sans-serif }
+h1, h2, h3, h4, h5, h6 { font-family:"Pretendard", dotum, sans-serif }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block }
 ul, dl,dt,dd { margin:0; padding:0; list-style:none }
 legend { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0); }
 label, input, button, select, img { vertical-align:middle; font-size:1.2rem }
-input, button { margin:0; padding:0; font-family:'Malgun Gothic', dotum, sans-serif; font-size:1.2rem }
+input, button { margin:0; padding:0; font-family:"Pretendard", dotum, sans-serif; font-size:1.2rem }
 input[type="submit"] { cursor:pointer }
 button { cursor:pointer }
-textarea, select { font-family:'Malgun Gothic', dotum, sans-serif; font-size:1.2rem }
+textarea, select { font-family:"Pretendard", dotum, sans-serif; font-size:1.2rem }
 select { margin:0 }
 p { margin:0; padding:0; word-break:break-all }
 hr { display:none }
@@ -26,3 +26,7 @@ input[type=text],input[type=password], textarea { outline:none; }
 #skip_to_container a { z-index:100000; position:absolute; top:0; left:0; width:1px; height:1px; font-size:0; line-height:0; overflow:hidden }
 #skip_to_container a:focus,
 #skip_to_container a:active { width:100%; height:75px; background:#21272e; color:#fff; font-size:2.4rem; font-weight:bold; text-align:center; text-decoration:none; line-height:4rem }
+
+/* 화면낭독기 사용자용 */
+#hd_login_msg {position:absolute;top:0;left:0;font-size:0;line-height:0;overflow:hidden}
+.msg_sound_only, .sound_only {display:inline-block !important;position:absolute;top:0;left:0;width:0;height:0;margin:0 !important;padding:0 !important;font-size:0;line-height:0;border:0 !important;overflow:hidden !important}

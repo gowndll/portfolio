@@ -2,11 +2,12 @@
 
 body {background-color: transparent;}
 #hd_pop, #hd_wrapper, #tnb .inner, #ft_wr {min-width: auto; max-width: 1920px; }
-#hd {padding:0; position: fixed; top: 40px; left: 45px; right: 45px;}
-#hd_wrapper {display: flex; align-items: center; padding: 0 20px; height: 45px; border: 2px solid #000; background: transparent; border-radius: 8px; backdrop-filter: blur(5px)}
+#hd {padding:0; position: fixed; top: 40px; left: 45px; right: 45px; z-index: 1000;}
+#hd_wrapper {display: flex; align-items: center; padding: 0 20px; height: 45px; border: 2px solid #000; background: transparent; border-radius: 8px; backdrop-filter: blur(5px); z-index: 1000;}
 #wrapper {width:100%; max-width: 1920px; height: 100vh; margin: 0 auto; padding:0; display: block;}
 #logo {width: auto; font-size: 20px; color:#000;}
-#container {border:0; border-radius: 0; background: none; }
+#container {border:0; border-radius: 0; background: none; padding:0; margin:0;}
+#ft {display: none;}
 
 #project_wrap {width:100%; height: 100vh;}
 #project_thumb {width:100%; height:100%;}

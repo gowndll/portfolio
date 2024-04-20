@@ -3,14 +3,27 @@
 {% endif %}
 
 {% set thumb_width, thumb_height = 210, 150 %}
-<ul>
-    {% for write in writes -%}
-    <li class="sd">
-        dfsdfsdf
-        <div class="wrap_using"></div>
-        <h3>{{ write.subject }}</h3>
-    </li>
-    {% else -%}
-        <li class="empty_li">게시물이 없습니다.</li>
-    {%- endfor %}
-</ul>
+<div class="aside_swiper">
+    <div class="swiper-wrapper">
+        {% for write in writes -%}
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <ul class="wrap-using">
+                    {% if write.wr_1 %}
+                        {% set wrList = write.wr_1.split(',') %}
+                        {% for i in wrList %}
+                        <li class="skill {{i}}"><span class="sound_only">{{i}}</span></li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+                <h3>{{ write.subject }}</h3>
+                <p class="sub">{{ write.wr_2 }}</p>
+                <p class="tags">{{ write.wr_3 }}</p>
+                <a class="gotolink" href="{{ url_for('read_post', bo_table=board.bo_table, wr_id=write.wr_id)|set_query_params(request) }}">자세히 보러가기</a>
+            </div>
+        </div>
+        {% else -%}
+            <div class="empty_li">게시물이 없습니다.</div>
+        {%- endfor %}
+    </div>
+</div>
