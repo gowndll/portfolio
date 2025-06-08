@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gowndll.github.io/portfolio/",
   "name": "haejukim",
   "version": "0.1.0",
   "private": true,
@@ -6,11 +7,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@notionhq/client": "^3.1.3",
     "@tanstack/react-query": "^5.80.6",
+    "gh-pages": "^6.3.0",
     "next": "15.3.3",
     "notion-client": "^7.3.0",
     "react": "^19.0.0",
