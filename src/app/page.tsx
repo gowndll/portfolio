@@ -12,7 +12,9 @@ export default async function Home() {
 
   return (
     <Fragment>
-      <Header />
+      <Suspense fallback={""}>
+        <Header />
+      </Suspense>
       <main>
         <Suspense fallback={<p>로딩중..</p>}>
           <Posts posts={posts} />
