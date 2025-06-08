@@ -2,9 +2,14 @@ import { cache } from "react";
 import { Client } from "@notionhq/client";
 import { NotionResults } from "@/app/api/IPost";
 
+const token = process.env.NOTION_API_KEY;
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
+
+if (!token) {
+  throw new Error("❌ NOTION_TOKEN이 설정되지 않았습니다.");
+}
 
 export const getDatabase = cache(async (): Promise<NotionResults> => {
   console.log("🔄 Notion API 호출!");
