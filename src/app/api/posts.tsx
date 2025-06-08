@@ -1,6 +1,5 @@
 "use client";
 
-import "../styles/posts.scss";
 import { useSearchParams } from "next/navigation";
 import PostList from "./postList";
 import { NotionResults } from "@/app/api/IPost";

@@ -28,7 +28,6 @@ const navList = [
 const Header = () => {
   const searchParams = useSearchParams();
   const queryType = searchParams.get("type");
-  console.log(queryType);
 
   return (
     <Fragment>

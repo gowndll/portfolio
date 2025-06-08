@@ -1,11 +1,12 @@
 import { Fragment, Suspense } from "react";
-import Header from "./Header";
+import { getDatabase } from "@/lib/notion";
+import "remixicon/fonts/remixicon.css";
 import "./globals.css";
 import "./styles/style.scss";
-import "remixicon/fonts/remixicon.css";
-import { getDatabase } from "@/lib/notion";
-import Posts from "./api/posts";
+import "./styles/posts.scss";
 import { NotionResults } from "./api/IPost";
+import Header from "./Header";
+import Posts from "./api/posts";
 
 export default async function Home() {
   const posts: NotionResults = await getDatabase();

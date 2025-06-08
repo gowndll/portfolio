@@ -33,6 +33,11 @@ const skillsData = [
     icon: "ri-vuejs-line",
     extraClass: "vue",
   },
+  {
+    name: "WAI",
+    icon: "ri-accessibility-fill",
+    extraClass: "wai",
+  },
 ];
 
 const Skills = () => {
