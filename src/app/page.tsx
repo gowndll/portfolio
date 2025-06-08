@@ -1,15 +1,20 @@
 import { Fragment } from "react";
-import "./globals.css";
 import Header from "./Header";
+import "./globals.css";
+import "./styles/style.scss";
+import "remixicon/fonts/remixicon.css";
+import { getDatabase } from "@/lib/notion";
+import Posts from "./api/posts";
+import { NotionResults } from "./api/IPost";
 
-export default function Home() {
+export default async function Home() {
+  const posts: NotionResults = await getDatabase();
+
   return (
     <Fragment>
       <Header />
       <main>
-        <div>
-          <p>main입니다</p>
-        </div>
+        <Posts posts={posts} />
       </main>
     </Fragment>
   );
