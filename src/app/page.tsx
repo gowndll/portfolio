@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import Header from "./Header";
 import "./globals.css";
 import "./styles/style.scss";
@@ -14,7 +14,9 @@ export default async function Home() {
     <Fragment>
       <Header />
       <main>
-        <Posts posts={posts} />
+        <Suspense fallback={<p>로딩중..</p>}>
+          <Posts posts={posts} />
+        </Suspense>
       </main>
     </Fragment>
   );
