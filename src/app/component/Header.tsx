@@ -1,33 +1,32 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Fragment } from "react";
-import "./styles/variables.scss";
-import { useSearchParams } from "next/navigation";
-import Skills from "./component/Skills";
-import Image from "next/image";
+import Link from 'next/link';
+import { Fragment } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Skills from './Skills';
+import Image from 'next/image';
 
 const navList = [
   {
-    title: "ALL",
-    iconClass: "ri-layout-grid-line",
+    title: 'ALL',
+    iconClass: 'ri-layout-grid-line',
     type: null,
   },
   {
-    title: "PRODUCT",
-    iconClass: "ri-window-2-fill",
-    type: "product",
+    title: 'PRODUCT',
+    iconClass: 'ri-window-2-fill',
+    type: 'product',
   },
   {
-    title: "TOY",
-    iconClass: "ri-cake-3-fill",
-    type: "toy",
+    title: 'TOY',
+    iconClass: 'ri-cake-3-fill',
+    type: 'toy',
   },
 ];
 
 const Header = () => {
   const searchParams = useSearchParams();
-  const queryType = searchParams.get("type");
+  const queryType = searchParams.get('type');
 
   return (
     <Fragment>
@@ -44,7 +43,7 @@ const Header = () => {
         <div className="profile__left">
           <div className="profile__img">
             <Image
-              src={"/img/profile.png"}
+              src={'/img/profile.png'}
               alt="노션으로 만든 프로필 사진"
               width={200}
               height={200}
@@ -82,10 +81,10 @@ const Header = () => {
         <ul className="nav__ul max-w">
           {navList?.map((item, index) => (
             <li
-              className={`nav__li ${queryType === item.type ? "active" : ""}`}
+              className={`nav__li ${queryType === item.type ? 'active' : ''}`}
               key={index}
             >
-              <Link href={item.type === null ? "/" : `/?type=${item.type}`}>
+              <Link href={item.type === null ? '/' : `/?type=${item.type}`}>
                 <i className={item.iconClass}></i>
                 <span>{item.title}</span>
               </Link>

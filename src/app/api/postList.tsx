@@ -39,9 +39,9 @@ const PostList: FC<IPostList> = ({
             <p>{title}</p>
           </div>
           <div className="list__period">
-            <p className="period__start">{`${period.start}`}</p>
+            <p className="period__start">{`${period.start ?? ""}`}</p>
             {"~"}
-            <p className="period__end">{`${period.end}`}</p>
+            <p className="period__end">{`${period.end ?? ""}`}</p>
           </div>
           <div className="list__skills">
             <p>{skills}</p>

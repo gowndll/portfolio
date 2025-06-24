@@ -1,6 +1,6 @@
-import { cache } from "react";
-import { Client } from "@notionhq/client";
-import { NotionResults } from "@/app/api/IPost";
+import { cache } from 'react';
+import { Client } from '@notionhq/client';
+import { NotionResults } from '@/app/api/IPost';
 
 const token = process.env.NOTION_API_KEY;
 const notion = new Client({
@@ -8,13 +8,21 @@ const notion = new Client({
 });
 
 if (!token) {
-  throw new Error("❌ NOTION_TOKEN이 설정되지 않았습니다.");
+  throw new Error('❌ NOTION_TOKEN이 설정되지 않았습니다.');
 }
 
 export const getDatabase = cache(async (): Promise<NotionResults> => {
-  console.log("🔄 Notion API 호출!");
+  console.log('🔄 Notion API 호출!');
   const databaseId = process.env.NOTION_DATABASE_ID!;
-  const response = await notion.databases.query({ database_id: databaseId });
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    sorts: [
+      {
+        property: 'list_num',
+        direction: 'descending', // "ascending"으로 하면 오름차순
+      },
+    ],
+  });
   return response.results as NotionResults;
 });
 

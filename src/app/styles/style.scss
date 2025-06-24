@@ -228,6 +228,14 @@
   }
 }
 
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #737373;
+}
+
 @media screen and (max-width: $max-width) {
   .profile {
     grid-template-columns: 100%;
