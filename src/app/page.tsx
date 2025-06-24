@@ -15,15 +15,13 @@ export default async function Home() {
 
   return (
     <Fragment>
-      <Suspense fallback={''}>
+      <Suspense fallback={<Loading />}>
         <Header />
-      </Suspense>
-      <main>
-        <Suspense fallback={<Loading />}>
+        <main>
           <Posts posts={posts} />
-        </Suspense>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </Suspense>
     </Fragment>
   );
 }
