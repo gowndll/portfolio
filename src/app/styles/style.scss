@@ -1,7 +1,7 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .lobster-regular {
-  font-family: "Lobster", sans-serif;
+  font-family: 'Lobster', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 .max-w {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
 }
 
 #skip {
@@ -40,8 +40,8 @@
   .header__logo {
     a {
       display: inline-block;
-      font-family: "Lobster", sans-serif;
-      font-size: 2.4rem;
+      font-family: 'Lobster', sans-serif;
+      font-size: clamp(1.3125rem, 1.2vw + 1.1rem, 1.5rem);
       text-decoration: none;
       color: #111;
     }
@@ -52,11 +52,12 @@
   display: grid;
   grid-template-columns: 30% 1fr;
   align-items: center;
-  padding: 3rem 0;
+  padding: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem)
+    clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
 
   .profile__left {
     .profile__img {
-      width: min(15rem, 80%);
+      width: min(10rem, 80%);
       height: auto;
       margin: 0 auto;
       padding: 0.5rem;
@@ -64,6 +65,7 @@
       border-radius: 100%;
       border: 1px solid #ddd;
       overflow: hidden;
+      cursor: pointer;
       img {
         border-radius: 100%;
         width: 100%;
@@ -75,32 +77,31 @@
 
   .profile__right {
     .profile__name {
-      font-size: 2rem;
+      font-size: clamp(1.125rem, 1.1vw + 1rem, 1.25rem);
       font-weight: 600;
     }
 
     .profile__info {
       display: grid;
-      grid-template-columns: max(5rem, 15%) 1fr;
-      font-size: 1.6rem;
-      padding: 2rem 0;
-      gap: 1rem;
+      grid-template-columns: max(4rem, 15%) 1fr;
+      font-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
+      padding: clamp(1.125rem, 0.5vw + 1rem, 1.25rem) 0;
+      gap: 0.6rem;
 
       .profile__info__tit {
         color: #737373;
       }
       .profile__info__desc {
-        font-size: 0.95em;
         span {
           display: inline-block;
           opacity: 0.5;
-          margin-right: 1rem;
+          margin-right: 0.6rem;
         }
       }
     }
 
     .profile__extra {
-      font-size: 1.5rem;
+      font-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
       font-weight: 300;
       font-style: italic;
     }
@@ -109,17 +110,17 @@
 
 .skill {
   position: relative;
-  padding: 3rem 0;
+  padding: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem) 0;
   .skillSwiper {
-    padding: 0 2rem;
+    padding: 0 clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
     text-align: center;
 
     .thumb {
       aspect-ratio: 1/1;
-      width: clamp(5rem, 14vw, 6rem);
-      height: clamp(5rem, 14vw, 6rem);
+      width: clamp(2.8125rem, 3vw + 1.5rem, 3.75rem);
+      height: clamp(2.8125rem, 3vw + 1.5rem, 3.75rem);
       margin: 0 auto;
-      padding: 0.6rem;
+      padding: 3px;
       border-radius: 100%;
       border: 1px solid #ddd;
       overflow: hidden;
@@ -131,7 +132,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(2rem, 8vw, 4rem);
+        font-size: clamp(1.125rem, 4vw + 0.5rem, 2.5rem);
         border-radius: 100%;
 
         .html {
@@ -155,21 +156,21 @@
       }
     }
     .name {
-      font-size: 1.4rem;
+      font-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
       font-weight: 300;
-      margin-top: 1rem;
+      margin-top: 0.6rem;
     }
   }
 
   --swiper-navigation-top-offset: calc(50% - 2rem);
-  --swiper-navigation-size: 1.3rem;
+  --swiper-navigation-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
   --swiper-navigation-color: #fff;
   --swiper-navigation-sides-offset: 0.5rem;
 
   .swiper-button-prev,
   .swiper-button-next {
-    width: 3rem;
-    height: 3rem;
+    width: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem);
+    height: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem);
     border-radius: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     font-weight: 600;
@@ -177,7 +178,7 @@
 }
 
 .nav {
-  height: 5.2rem;
+  height: clamp(2.8125rem, 2vw + 2rem, 3.25rem);
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 
@@ -189,7 +190,7 @@
   }
   .nav__li {
     position: relative;
-    padding: 0 2rem;
+    padding: 0 1.25rem;
     height: 100%;
 
     a {
@@ -200,7 +201,7 @@
       column-gap: 0.4rem;
       width: 100%;
       height: 100%;
-      font-size: 1.4rem;
+      font-size: clamp(0.8125rem, 0.4vw + 0.7rem, 0.9375rem);
       color: #737373;
 
       i {
@@ -214,7 +215,7 @@
       }
 
       &::after {
-        content: "";
+        content: '';
         display: block;
         width: 80%;
         height: 2px;
@@ -229,16 +230,60 @@
 }
 
 footer {
-  padding: 2rem;
+  padding: clamp(1.125rem, 1.1vw + 1rem, 1.25rem);
   text-align: center;
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: #737373;
+
+  p {
+    font-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
+    color: #737373;
+    font-weight: 300;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-close {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    padding: 0;
+    cursor: pointer;
+
+    i {
+      font-size: 1.6rem;
+      color: #fff;
+    }
+  }
 }
 
 @media screen and (max-width: $max-width) {
   .profile {
     grid-template-columns: 100%;
-    padding: 3rem 2rem;
+  }
+
+  .modal-overlay {
+    .btn-close {
+      top: 10px;
+      right: 10px;
+    }
   }
 }

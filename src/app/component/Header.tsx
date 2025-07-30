@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Skills from './Skills';
 import Image from 'next/image';
+import Modal from './Modal';
+import Story from './Story';
 
 const navList = [
   {
@@ -27,6 +29,7 @@ const navList = [
 const Header = () => {
   const searchParams = useSearchParams();
   const queryType = searchParams.get('type');
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <Fragment>
@@ -41,7 +44,12 @@ const Header = () => {
       </header>
       <article className="profile max-w" aria-label="profile">
         <div className="profile__left">
-          <div className="profile__img">
+          <div
+            className="profile__img"
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
             <Image
               src={'/img/profile.png'}
               alt="노션으로 만든 프로필 사진"
@@ -92,6 +100,11 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      {open && (
+        <Modal onClose={() => setOpen(false)}>
+          <Story />
+        </Modal>
+      )}
     </Fragment>
   );
 };

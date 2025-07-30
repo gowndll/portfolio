@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .list {
   padding: 0;
@@ -11,11 +11,11 @@
     justify-content: center;
     align-items: center;
     i {
-      font-size: 3rem;
+      font-size: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem);
       color: rgba(0, 0, 0, 0.3);
     }
     p {
-      font-size: 1.6rem;
+      font-size: clamp(0.875rem, 0.45vw + 0.8rem, 1rem);
       color: rgba(0, 0, 0, 0.3);
     }
   }
@@ -23,11 +23,11 @@
   .list__ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 2px;
 
     .list__li {
       position: relative;
-      flex: 0 0 calc(33.3% - 0.31rem);
+      flex: 0 0 calc(33.3% - 2px);
       cursor: pointer;
 
       .list__thumb {
@@ -48,8 +48,8 @@
         bottom: 0;
         right: 0;
         color: #fff;
-        font-size: 1.4rem;
-        padding: 2rem;
+        font-size: clamp(0.8125rem, 0.4vw + 0.7rem, 0.9375rem);
+        padding: clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
         background: linear-gradient(to top, #0009, #0008, #0000);
         display: flex;
         flex-direction: column;
@@ -58,11 +58,11 @@
         .list__title {
           p {
             color: #fff;
-            font-size: 1.8rem;
+            font-size: clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
             text-decoration: none;
             font-weight: 600;
-            display: -webkit-box;
             display: -ms-flexbox;
+            display: -webkit-box;
             display: box;
             overflow: hidden;
             vertical-align: top;
@@ -74,10 +74,10 @@
         }
 
         .list__period {
-          margin-top: 1rem;
+          margin-top: 0.625rem;
           display: flex;
           align-items: center;
-          column-gap: 0.1rem;
+          column-gap: 1px;
         }
       }
     }

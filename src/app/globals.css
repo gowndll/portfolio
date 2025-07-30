@@ -213,10 +213,6 @@ section {
 	display: block;
 }
 
-html {
-	font-size: 10px;
-}
-
 body {
 	line-height: 1;
 }
@@ -242,11 +238,4 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-
-@media screen and (max-width: 975px) {
-	html {
-		font-size: 9px;
-	}
 }

@@ -4,6 +4,7 @@ import 'remixicon/fonts/remixicon.css';
 import './globals.css';
 import './styles/style.scss';
 import './styles/posts.scss';
+import './styles/loading.scss';
 import { NotionResults } from './api/IPost';
 import Header from './component/Header';
 import Posts from './api/posts';
