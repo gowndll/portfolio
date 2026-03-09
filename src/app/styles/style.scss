@@ -117,8 +117,6 @@
 
     .thumb {
       aspect-ratio: 1/1;
-      width: clamp(2.8125rem, 3vw + 1.5rem, 3.75rem);
-      height: clamp(2.8125rem, 3vw + 1.5rem, 3.75rem);
       margin: 0 auto;
       padding: 3px;
       border-radius: 100%;
@@ -132,8 +130,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1.125rem, 4vw + 0.5rem, 2.5rem);
+        font-size: clamp(2rem, 5vw, 2.5rem);
         border-radius: 100%;
+        & > i {
+          line-height: 1;
+        }
 
         .html {
           color: #f2682c;
@@ -171,9 +172,12 @@
   .swiper-button-next {
     width: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem);
     height: clamp(1.6875rem, 1vw + 1.2rem, 1.875rem);
+    aspect-ratio: 1/1;
     border-radius: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     font-weight: 600;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -278,6 +282,7 @@ footer {
 @media screen and (max-width: $max-width) {
   .profile {
     grid-template-columns: 100%;
+    padding-bottom: 0;
   }
 
   .modal-overlay {

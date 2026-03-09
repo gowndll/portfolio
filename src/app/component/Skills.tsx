@@ -45,9 +45,13 @@ const Skills = () => {
     <Fragment>
       <Swiper
         slidesPerView={4.5}
-        spaceBetween={4}
+        spaceBetween={10}
         navigation={true}
         breakpoints={{
+          0: {
+            slidesPerView: 3.8,
+            spaceBetween: 20,
+          },
           440: {
             slidesPerView: 6,
             spaceBetween: 20,

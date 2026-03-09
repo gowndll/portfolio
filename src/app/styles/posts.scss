@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and (max-width: $max-width) {
+@media screen and (max-width: $breakpoint-md) {
   .list {
     .list__ul {
       gap: 1px;
@@ -102,3 +102,16 @@
     }
   }
 }
+
+
+@media screen and (max-width: $breakpoint-sm) {
+  .list {
+    .list__ul {
+      gap: 1px;
+      .list__li {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}
+
