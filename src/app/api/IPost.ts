@@ -9,6 +9,7 @@ interface Parent {
 }
 
 interface Properties {
+  isShow: IsShow;
   period: Period;
   thumb: Thumb;
   type: Type;
@@ -49,6 +50,12 @@ interface Period {
   id: string;
   type: string;
   date: DateClass;
+}
+
+interface IsShow {
+  id: string;
+  type: string;
+  checkbox: boolean;
 }
 
 interface DateClass {

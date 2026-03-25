@@ -18,6 +18,8 @@ const Posts = ({ posts }: PostsProps) => {
     return !queryType || type === queryType;
   });
 
+  // console.log(filteredPosts)
+
   return (
     <article className="list max-w">
       <header className="visuallyhidden">
@@ -39,6 +41,7 @@ const Posts = ({ posts }: PostsProps) => {
             const skills =
               post.properties.skills?.rich_text?.[0]?.plain_text ?? '';
             const type = post.properties.type?.select?.name ?? '';
+            const isShow = post.properties.isShow?.checkbox ?? false; // 필터링된 포스트만 표시 여부 결정
             if (!queryType || type === queryType) {
               return (
                 <PostList
@@ -50,6 +53,7 @@ const Posts = ({ posts }: PostsProps) => {
                   period={period}
                   skills={skills}
                   type={type}
+                  isShow={isShow}
                 />
               );
             }
